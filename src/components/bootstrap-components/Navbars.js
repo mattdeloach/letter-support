@@ -59,7 +59,7 @@ const navbarPrimaryCode = `<Navbar color="primary" light expand="md" className="
 
 const navbarTogglerCode = `function NavbarTogglerExample() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <Navbar color="primary" light className="fs--1 font-weight-semi-bold navbar-standard">
       <NavbarBrand href="/" className="mr-auto text-white">
