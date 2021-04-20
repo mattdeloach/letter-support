@@ -97,11 +97,11 @@ const getOption = (data, isDark) => {
 
 const BalanceTrend = ({ data }) => {
   const { isDark } = useContext(AppContext);
-  const total = '23,483.29';
+  const total = '23k';
 
   return (
     <Card className="h-md-100">
-      <FalconCardHeader className="pb-0" title="Rolling Average" light={false} titleTag="h6" />
+      <FalconCardHeader className="pb-0" title="30 Day Change" light={false} titleTag="h6" />
       <CardBody tag={Flex} align="end">
         <Row className="flex-grow-1">
           <Col className="align-self-end">

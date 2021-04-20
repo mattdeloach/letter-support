@@ -22,6 +22,8 @@ import ProfileBanner from './ProfileBanner';
 import ProfileContent from './ProfileContent';
 import ProfileFooter from './ProfileFooter';
 
+import AccountOverview from '../Accounts/AccountOverview';
+
 import weeklySales from '../../../data/dashboard/weeklySales';
 import totalOrder from '../../../data/dashboard/totalOrder';
 import marketShare from '../../../data/dashboard/marketShare';
@@ -36,16 +38,9 @@ const Dashboard = () => {
   return (
     <Fragment>
       <ProfileBanner />
+      <AccountOverview />
 
 
-      <Row noGutters>
-        <Col lg={6} className="mb-3 pr-lg-2 mb-3">
-          <RunningProjects projects={products} />
-        </Col>
-        <Col lg={6} className="mb-3 pl-lg-2 mb-3">
-          <TotalSales className="h-lg-100" />
-        </Col>
-      </Row>
 
 
 

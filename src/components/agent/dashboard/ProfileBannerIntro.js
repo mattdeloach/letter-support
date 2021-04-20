@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
-import Verified from '../common/Verified';
+import Premium from '../Premium';
 
 const ProfileBannerIntro = ({ name, verified, headline, location, children }) => {
   return (
     <Col lg="8">
       <h4 className="mb-1">
         {name}
-        {verified && <Verified placement="right" id="profileVerified" />}
+        {verified && <Premium placement="right" id="profileVerified" />}
       </h4>
       {headline && <h5 className="fs-0 font-weight-normal">{headline}</h5>}
       {location && <p className="text-500">{location}</p>}
