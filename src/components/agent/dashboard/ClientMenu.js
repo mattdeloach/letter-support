@@ -1,18 +1,28 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Col, Button } from 'reactstrap';
+import { Col, Button, Media, Row } from 'reactstrap';
 import HighlightMedia from '../../common/HighlightMedia';
+import Avatar from '../../common/Avatar';
+import avatarSrc from '../../../assets/img/team/3.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const status = 'status-online';
 
 const ClientMenu = ({ noOfFollowers, previousJobs }) => {
   return (
-    <Col className="pl-2 pl-lg-3 d-flex flex-column align-items-end mb-3">
-      <div>
-      Agent:
-      <Button color="falcon-default" size="sm" className="px-3 ml-2">
-        Hannah Ellis
-      </Button>
+    <Col className="pl-2 pl-lg-3 d-flex align-items-end mb-3">
+    <div className="mr-auto">
+      <Row>
+      <Avatar src={avatarSrc} className={status} size="2xl" />
+      <Media body className="align-self-center ml-2">
+        <p className="mb-1 line-height-1">
+          Carol Danvers
+        </p>
 
+      </Media>
+      </Row>
       </div>
+
 
       <div class="mt-auto">
         <ul class="nav nav-pills mt-auto">
