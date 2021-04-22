@@ -13,13 +13,17 @@ const ClientMenu = ({ noOfFollowers, previousJobs }) => {
     <Col className="pl-2 pl-lg-3 d-flex align-items-end mb-3">
     <div className="mr-auto">
       <Row>
-      <Avatar src={avatarSrc} className={status} size="2xl" />
+      <Avatar src={avatarSrc} className={status} size="3xl" />
       <Media body className="align-self-center ml-2">
-        <p className="mb-1 line-height-1">
+        <h6 className="mb-0">
           Carol Danvers
-        </p>
-
+        </h6>
+        <p className="fs--1 mb-0">online</p>
+        <Button color="light" size="sm" className="py-0 mt-1 border" transform="shrink-5">
+          <span className="fs--1">Message</span>
+        </Button>
       </Media>
+
       </Row>
       </div>
 

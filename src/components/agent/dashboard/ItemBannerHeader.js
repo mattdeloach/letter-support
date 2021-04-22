@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { CardHeader, Input, Label } from 'reactstrap';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button, Media } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Background from '../../common/Background';
 import Avatar from '../../common/Avatar';
@@ -23,6 +23,8 @@ import totalOrder from '../../../data/dashboard/totalOrder';
 import marketShare from '../../../data/dashboard/marketShare';
 import networth from '../../../data/dashboard/networth';
 import weather from '../../../data/dashboard/weather';
+
+const status = 'status-online';
 
 const ProfileBannerHeader = ({ coverSrc, avatarSrc, isEditable }) => {
   return (
