@@ -18,6 +18,8 @@ import ClientNote from './ClientNote';
 import Notification from './Notification';
 import Opportunity from './Opportunity';
 
+import AgentWidget from './AgentWidget';
+
 import weeklySales from '../../../data/dashboard/weeklySales';
 import totalOrder from '../../../data/dashboard/totalOrder';
 import marketShare from '../../../data/dashboard/marketShare';
@@ -60,6 +62,7 @@ const ProfileBannerHeader = ({ coverSrc, avatarSrc, isEditable }) => {
             className=" avatar-profile"
             mediaClass="img-thumbnail shadow-sm"
           />
+          <AgentWidget />
         </Fragment>
     </CardHeader>
   );
