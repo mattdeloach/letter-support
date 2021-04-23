@@ -23,6 +23,7 @@ import ProfileContent from './ProfileContent';
 import ProfileFooter from './ProfileFooter';
 
 import AccountOverview from '../Accounts/AccountOverview';
+import TransactionDetail from '../transaction-detail/TransactionDetail';
 
 import weeklySales from '../../../data/dashboard/weeklySales';
 import totalOrder from '../../../data/dashboard/totalOrder';
@@ -35,17 +36,15 @@ import users from '../../../data/dashboard/users';
 
 const Dashboard = () => {
   const resolveUsers = users.slice(0, 5);
+  const view = true;
   return (
     <Fragment>
       <ProfileBanner />
-      <AccountOverview />
-
-
-
-
-
-
-
+      {view ? (
+        <AccountOverview />
+      ) : (
+        <TransactionDetail />
+      )}
     </Fragment>
   );
 };
