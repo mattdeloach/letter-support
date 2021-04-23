@@ -27,7 +27,9 @@ import createMarkup from '../../../helpers/createMarkup';
 import rawCustomer from './data/vendor';
 import rawCustomerLogs from './data/purchaseHistory';
 
-const Subnav = () => {
+import Subnav from './Subnav';
+
+const TransactionHeader = () => {
   const { loading, data: customer } = useFakeFetch(rawCustomer);
   const { name, email, createdAt } = customer;
 
@@ -41,42 +43,17 @@ const Subnav = () => {
             <Row>
               <Col>
                 <h5 className="mb-2">
-                  Transaction Detail
-                </h5>
-                <ButtonIcon color="falcon-default" size="sm" icon="plus" iconClassName="fs--2">
-                  Add note
-                </ButtonIcon>
+                  <ButtonIcon color="falcon-default" size="sm" icon="arrow-left" iconClassName="fs--2" /> &nbsp; Transaction Detail &nbsp;
+                  <Badge color={'soft-success'} className="mr-2" pill>
 
-                <UncontrolledDropdown className="d-inline-block ml-2">
-                  <DropdownToggle color="falcon-default" size="sm">
-                    <FontAwesomeIcon icon="ellipsis-h" />
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem>Edit</DropdownItem>
-                    <DropdownItem>Report</DropdownItem>
-                    <DropdownItem>Archive</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem className="text-danger">Delete user</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Col>
-              <Col xs="auto" className="d-none d-sm-block">
-                <h6 className="text-uppercase text-600">
-                  Customer
-                  <FontAwesomeIcon icon="user" className="ml-2" />
-                </h6>
+                  <FontAwesomeIcon icon="check" />&nbsp;
+                    Repeat Payment
+                  </Badge>
+                </h5>
+                <p className="ml-6">Alerts: <code> none</code></p>
               </Col>
             </Row>
           </CardHeader>
-          <CardBody className="border-top">
-            <Media>
-              <FontAwesomeIcon icon="user" transform="down-5" className="text-success mr-2" />
-              <Media body>
-                <p className="mb-0">Customer was created</p>
-                <p className="fs--1 mb-0 text-600">{createdAt}</p>
-              </Media>
-            </Media>
-          </CardBody>
         </Fragment>
       )}
     </Card>
@@ -282,7 +259,8 @@ const CustomerLogs = () => {
 
 const TransactionDetail = () => (
   <Fragment>
-    <Subnav />
+
+    <TransactionHeader />
     <VendorSummary />
     <CustomerDetail />
     <CustomerLogs />

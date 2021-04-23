@@ -36,7 +36,7 @@ import users from '../../../data/dashboard/users';
 
 const Dashboard = () => {
   const resolveUsers = users.slice(0, 5);
-  const view = true;
+  const view = false;
   return (
     <Fragment>
       <ProfileBanner />
