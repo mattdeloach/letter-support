@@ -217,23 +217,24 @@ const CustomerDetail = () => {
   );
 };
 
-const CustomerLog = ({ status, link, time }) => {
+const CustomerLog = ({ status, link, time, user, amount, date }) => {
   let badgeColor = 'soft-warning';
   if (status === 404) badgeColor = 'soft-danger';
   else if (status === 200) badgeColor = 'soft-success';
 
   return (
-    <Row noGutters className="align-items-center border-bottom py-2 px-3">
-      <Col md="auto" className="pr-3">
+    <Row noGutters className="border-bottom">
+      <Col md="auto" className="pr-3 text-right ml-2">
+          {date}
+      </Col>
+      <Col md className="mt-1 mt-md-0 text-left">
+        <code>${amount}</code>
+      </Col>
+      <Col md="auto" className="mt-1 mt-md-0">
         <Badge color={badgeColor} pill>
-          {status}
+          <p className="mb-0">{user}</p>
         </Badge>
-      </Col>
-      <Col md className="mt-1 mt-md-0">
-        <code>POST {link}</code>
-      </Col>
-      <Col md="auto">
-        <p className="mb-0">{time}</p>
+
       </Col>
     </Row>
   );
