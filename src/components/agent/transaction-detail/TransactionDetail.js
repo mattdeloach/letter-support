@@ -15,6 +15,7 @@ import {
   DropdownToggle,
   Media,
   Row,
+  Table,
   UncontrolledDropdown
 } from 'reactstrap';
 import Loader from '../../common/Loader';
@@ -224,18 +225,38 @@ const CustomerLog = ({ status, link, time, user, amount, date }) => {
 
   return (
     <Row noGutters className="border-bottom">
-      <Col md="auto" className="pr-3 text-right ml-2">
-          {date}
-      </Col>
-      <Col md className="mt-1 mt-md-0 text-left">
-        <code>${amount}</code>
-      </Col>
-      <Col md="auto" className="mt-1 mt-md-0">
-        <Badge color={badgeColor} pill>
-          <p className="mb-0">{user}</p>
-        </Badge>
-
-      </Col>
+    <Table striped bordered className="mb-0">
+      <thead>
+        <tr>
+          <th colSpan="2">Date</th>
+          <th className="text-center" colSpan="2">
+            Extra small
+            <br />
+            <small>&lt;576px</small>
+          </th>
+          <th className="text-center" colSpan="8">
+            Small
+            <br />
+            <small>≥576px</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colSpan="2">
+            {date}
+          </td>
+          <td colSpan="2">
+            ${amount}
+          </td>
+          <td colSpan="8">
+            <Badge color={badgeColor} pill>
+              <p className="mb-0">{user}</p>
+            </Badge>
+          </td>
+        </tr>
+      </tbody>
+    </Table>
     </Row>
   );
 };
