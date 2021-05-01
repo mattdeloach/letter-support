@@ -15,12 +15,12 @@ const ClientMenu = ({ noOfFollowers, previousJobs }) => {
       </div>
 
 
-      <div class="mt-auto">
-        <ul class="nav nav-pills mt-auto">
-         <li class="nav-item"><a class="nav-link active" href="#">Accounts</a></li>
-         <li class="nav-item"><a class="nav-link" href="#">Lending</a></li>
-         <li class="nav-item"><a class="nav-link" href="#">Investments</a></li>
-         <li class="nav-item"><a class="nav-link" href="#">Digital Office</a></li>
+      <div className="mt-auto">
+        <ul className="nav nav-pills mt-auto">
+         <li className="nav-item"><a className="nav-link active" href="#">Accounts</a></li>
+         <li className="nav-item"><a className="nav-link" href="#">Lending</a></li>
+         <li className="nav-item"><a className="nav-link" href="#">Investments</a></li>
+         <li className="nav-item"><a className="nav-link" href="#">Digital Office</a></li>
         </ul>
       </div>
 

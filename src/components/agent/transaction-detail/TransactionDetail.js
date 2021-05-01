@@ -44,7 +44,7 @@ const TransactionHeader = () => {
         <Loader />
       ) : (
         <Fragment>
-          <CardHeader>
+          <CardHeader className="rounded-bottom">
             <Row>
               <Col>
                 <h5 className="mb-2">
@@ -120,7 +120,7 @@ const VendorSummary = () => {
               <Col xs="auto" className="d-none d-sm-block">
                 <h6 className="text-uppercase text-600">
                   Vendor
-                  <FontAwesomeIcon icon="briefcase" className="ml-2" />
+                  <FontAwesomeIcon icon="check-square" className="ml-2" />
                 </h6>
               </Col>
             </Row>
@@ -199,7 +199,7 @@ const CustomerDetail = () => {
               <CustomerDetailRow title="Transaction Code">
                 0HE74CSR 000008475136201
               </CustomerDetailRow>
-              <CustomerDetailRow title="Custome rTag">
+              <CustomerDetailRow title="Customer Tag">
                 none
               </CustomerDetailRow>
               <CustomerDetailRow title="Customer Flag" isLastItem>
@@ -224,40 +224,21 @@ const CustomerLog = ({ status, link, time, user, amount, date }) => {
   else if (status === 200) badgeColor = 'soft-success';
 
   return (
-    <Row noGutters className="border-bottom">
-    <Table striped bordered className="mb-0">
-      <thead>
+    <Fragment>
         <tr>
-          <th colSpan="2">Date</th>
-          <th className="text-center" colSpan="2">
-            Extra small
-            <br />
-            <small>&lt;576px</small>
-          </th>
-          <th className="text-center" colSpan="8">
-            Small
-            <br />
-            <small>≥576px</small>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colSpan="2">
+          <td colSpan="1">
             {date}
           </td>
-          <td colSpan="2">
+          <td colSpan="1">
             ${amount}
           </td>
-          <td colSpan="8">
+          <td colSpan="4">
             <Badge color={badgeColor} pill>
               <p className="mb-0">{user}</p>
             </Badge>
           </td>
         </tr>
-      </tbody>
-    </Table>
-    </Row>
+        </Fragment>
   );
 };
 
@@ -273,21 +254,33 @@ const CustomerLogs = () => {
   return (
     <Card>
       <FalconCardHeader title="Purchase History" />
+      {loading ? (
+        <Loader />
+      ) : (
       <CardBody className="border-top p-0">
-        {loading ? (
-          <Loader />
-        ) : (
-          isIterableArray(customerLogs) && customerLogs.map((log, index) => <CustomerLog {...log} key={index} />)
-        )}
+        <Table striped bordered className="mb-0">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>User</th>
+            </tr>
+          </thead>
+          <tbody>
+          {isIterableArray(customerLogs) && customerLogs.map((log, index) => <CustomerLog {...log} key={index} />)}
+          </tbody>
+        </Table>
       </CardBody>
-      <FalconCardFooterLink title="View more logs" to="#!" borderTop={false} />
+
+      )}
+      <FalconCardFooterLink title="6 Purchases" to="#!" borderTop={false} />
     </Card>
   );
 };
 
 const TransactionDetail = () => (
   <Fragment>
-
+    <Subnav />
     <TransactionHeader />
     <VendorSummary />
     <CustomerDetail />
